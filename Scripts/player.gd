@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const TILE_SIZE = Vector2(32, 16) # Size of one isometric tile
 const JUMP_HEIGHT = 10.0 # Maximum height of the jump arc
+
 var target_position: Vector2 # Target position to move toward
 var is_moving: bool = false # To control if the player is already moving
 var jump_progress: float = 0.0 # Progress along the jump arc (0 to 1)
 var start_position: Vector2 # Starting position for the jump
+var move_distance: int = 1 # Number of grids to move (default: 1)
 
 # Placeholder sprite region rects
 const SPRITE_RECT_LEFT = Rect2(114, 53, 11, 17)
@@ -18,7 +20,21 @@ func _ready() -> void:
 	target_position = position
 
 func _process(delta: float) -> void:
-	# Listen for input only if the character is not moving
+	# Cycle through move distances
+	if Input.is_action_just_pressed("move_one"):
+		move_distance = 1
+		print("Move distance set to 1")
+	elif Input.is_action_just_pressed("move_two"):
+		move_distance = 2
+		print("Move distance set to 2")
+	elif Input.is_action_just_pressed("move_three"):
+		move_distance = 3
+		print("Move distance set to 3")
+	elif Input.is_action_just_pressed("move_four"):
+		move_distance = 4
+		print("Move distance set to 4")
+
+	# Listen for movement input only if the character is not moving
 	if not is_moving:
 		if Input.is_action_just_pressed("ui_up"):
 			update_sprite_direction("up")
@@ -46,11 +62,13 @@ func _process(delta: float) -> void:
 		position = Vector2(horizontal_position.x, horizontal_position.y - arc_height)
 
 func move_to(direction: Vector2) -> void:
-	# Calculate the target position based on the direction and tile size
+	# Calculate the target position based on the direction, tile size, and move distance
 	target_position = position + Vector2(
-		direction.x * TILE_SIZE.x / 2 - direction.y * TILE_SIZE.x / 2,
-		direction.x * TILE_SIZE.y / 2 + direction.y * TILE_SIZE.y / 2
+		(direction.x * TILE_SIZE.x / 2 - direction.y * TILE_SIZE.x / 2) * move_distance,
+		(direction.x * TILE_SIZE.y / 2 + direction.y * TILE_SIZE.y / 2) * move_distance
 	)
+	print("Target position:", target_position)
+	print("Move distance:", move_distance)
 	is_moving = true
 	jump_progress = 0.0
 	start_position = position
