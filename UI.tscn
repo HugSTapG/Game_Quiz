@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://5hyj2i02dg0y"]
+
+[ext_resource type="PackedScene" uid="uid://tv62o33j1a2r" path="res://Map.tscn" id="1_6cc2l"]
+[ext_resource type="Script" path="res://Scripts/QuizUI.gd" id="2_glku8"]
+[ext_resource type="PackedScene" uid="uid://sc1lbx3hth4r" path="res://Players.tscn" id="2_kv8by"]
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" parent="." instance=ExtResource("1_6cc2l")]
+
+[node name="Players" parent="." instance=ExtResource("2_kv8by")]
+
+[node name="Quiz_UI" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 225.0
+offset_right = 713.0
+offset_bottom = 387.0
+script = ExtResource("2_glku8")
+
+[node name="Quiz_Container" type="VBoxContainer" parent="Quiz_UI"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Pregunta" type="Label" parent="Quiz_UI/Quiz_Container"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MargenR1" type="MarginContainer" parent="Quiz_UI/Quiz_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="Respuesta_Uno" type="Button" parent="Quiz_UI/Quiz_Container/MargenR1"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MargenR2" type="MarginContainer" parent="Quiz_UI/Quiz_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="Respuesta_Dos" type="Button" parent="Quiz_UI/Quiz_Container/MargenR2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MargenR3" type="MarginContainer" parent="Quiz_UI/Quiz_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="Respuesta_Tres" type="Button" parent="Quiz_UI/Quiz_Container/MargenR3"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2

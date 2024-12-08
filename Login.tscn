@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv31uue61r3qb"]
+
+[ext_resource type="PackedScene" uid="uid://tv62o33j1a2r" path="res://Map.tscn" id="1_l3lvh"]
+[ext_resource type="Script" path="res://Scripts/LoginUI.gd" id="2_qmkq1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" parent="." instance=ExtResource("1_l3lvh")]
+
+[node name="Login_UI" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 225.0
+offset_right = 713.0
+offset_bottom = 387.0
+script = ExtResource("2_qmkq1")
+
+[node name="Login_Container" type="VBoxContainer" parent="Login_UI"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Indentificar" type="Label" parent="Login_UI/Login_Container"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Log In"
+horizontal_alignment = 1
+
+[node name="Margen1" type="MarginContainer" parent="Login_UI/Login_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="Username" type="LineEdit" parent="Login_UI/Login_Container/Margen1"]
+layout_mode = 2
+placeholder_text = "Username"
+clear_button_enabled = true
+
+[node name="Margen2" type="MarginContainer" parent="Login_UI/Login_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="Password" type="LineEdit" parent="Login_UI/Login_Container/Margen2"]
+layout_mode = 2
+placeholder_text = "Password"
+clear_button_enabled = true
+
+[node name="Margen3" type="MarginContainer" parent="Login_UI/Login_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="LoginButton" type="Button" parent="Login_UI/Login_Container/Margen3"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Enter"
