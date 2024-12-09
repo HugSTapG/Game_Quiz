@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://sc1lbx3hth4r"]
+
+[ext_resource type="Script" path="res://Scripts/player_2.gd" id="1_acw2k"]
+[ext_resource type="Texture2D" uid="uid://i165gtswm16j" path="res://Assets/Players/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png" id="2_crc4q"]
+[ext_resource type="Script" path="res://Scripts/player_1.gd" id="3_oyxk1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pcw0q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imlah"]
+radius = 3.16228
+
+[node name="Players" type="Node2D"]
+
+[node name="Players" type="Node2D" parent="."]
+position = Vector2(503, 435)
+
+[node name="Player1" type="CharacterBody2D" parent="Players"]
+modulate = Color(0.756863, 1, 0.282353, 1)
+texture_filter = 1
+position = Vector2(30, 15)
+script = ExtResource("3_oyxk1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Players/Player1"]
+material = SubResource("CanvasItemMaterial_pcw0q")
+texture = ExtResource("2_crc4q")
+region_enabled = true
+region_rect = Rect2(114, 53, 11, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player1"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_imlah")
+
+[node name="Player2" type="CharacterBody2D" parent="Players"]
+modulate = Color(1, 0.168627, 1, 1)
+texture_filter = 1
+position = Vector2(16, 22)
+script = ExtResource("1_acw2k")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Players/Player2"]
+material = SubResource("CanvasItemMaterial_pcw0q")
+texture = ExtResource("2_crc4q")
+region_enabled = true
+region_rect = Rect2(114, 53, 11, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player2"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_imlah")
