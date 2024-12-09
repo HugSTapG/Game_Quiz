@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn8doci4ydmlt"]
+
+[ext_resource type="Script" path="res://Scripts/SelectionMenu.gd" id="1_o11eb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MiddleScene" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 225.0
+offset_right = 713.0
+offset_bottom = 387.0
+script = ExtResource("1_o11eb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MiddleScene"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Identifier" type="Label" parent="MiddleScene/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Logged as, "
+horizontal_alignment = 1
+
+[node name="Margen1" type="MarginContainer" parent="MiddleScene/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="StartButton" type="Button" parent="MiddleScene/VBoxContainer/Margen1"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Start"
+
+[node name="Margen2" type="MarginContainer" parent="MiddleScene/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="ServerAddress" type="LineEdit" parent="MiddleScene/VBoxContainer/Margen2"]
+layout_mode = 2
+placeholder_text = "Address"
+clear_button_enabled = true
+
+[node name="Margen3" type="MarginContainer" parent="MiddleScene/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="JoinButton" type="Button" parent="MiddleScene/VBoxContainer/Margen3"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Join"
+
+[node name="StatusLabel" type="Label" parent="MiddleScene/VBoxContainer"]
+layout_mode = 2
