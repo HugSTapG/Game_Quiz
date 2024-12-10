@@ -1,0 +1,24 @@
+{
+    "questions": [
+        {
+            "question": "If you freeze water, what do you get?",
+            "answers": ["Ice", "Bomb", "Fire"],
+            "correctAnswerIndex": 0
+        },
+        {
+            "question": "What is the capital of France?",
+            "answers": ["Berlin", "Madrid", "Paris"],
+            "correctAnswerIndex": 2
+        },
+        {
+            "question": "What is 2 + 2?",
+            "answers": ["3", "4", "5"],
+            "correctAnswerIndex": 1
+        },
+        {
+            "question": "Which planet is closest to the Sun?",
+            "answers": ["Venus", "Mercury", "Mars"],
+            "correctAnswerIndex": 1
+        }
+    ]
+}
