@@ -1,24 +1,184 @@
 {
-    "questions": [
-        {
-            "question": "If you freeze water, what do you get?",
-            "answers": ["Ice", "Bomb", "Fire"],
-            "correctAnswerIndex": 0
-        },
-        {
-            "question": "What is the capital of France?",
-            "answers": ["Berlin", "Madrid", "Paris"],
-            "correctAnswerIndex": 2
-        },
-        {
-            "question": "What is 2 + 2?",
-            "answers": ["3", "4", "5"],
-            "correctAnswerIndex": 1
-        },
-        {
-            "question": "Which planet is closest to the Sun?",
-            "answers": ["Venus", "Mercury", "Mars"],
-            "correctAnswerIndex": 1
-        }
-    ]
+  "questions": [
+    {
+      "question": "If you freeze water, what do you get?",
+      "answers": [
+        "Ice",
+        "Bomb",
+        "Fire"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the capital of France?",
+      "answers": [
+        "Berlin",
+        "Madrid",
+        "Paris"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "What is 2 + 2?",
+      "answers": [
+        "3",
+        "4",
+        "5"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Which planet is closest to the Sun?",
+      "answers": [
+        "Venus",
+        "Mercury",
+        "Mars"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Which element is the most abundant in Earth's atmosphere?",
+      "answers": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answers": [
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "answers": [
+        "Brain",
+        "Liver",
+        "Skin"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "Which chemical element has the symbol 'Fe'?",
+      "answers": [
+        "Iron",
+        "Fluorine",
+        "Francium"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answers": [
+        "Vincent van Gogh",
+        "Leonardo da Vinci",
+        "Pablo Picasso"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "What is the square root of 144?",
+      "answers": [
+        "14",
+        "12",
+        "10"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "In which year did World War II end?",
+      "answers": [
+        "1945",
+        "1944",
+        "1946"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the speed of light in meters per second?",
+      "answers": [
+        "299,792,458",
+        "199,792,458",
+        "399,792,458"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Which planet is known as the 'Morning Star'?",
+      "answers": [
+        "Venus",
+        "Mars",
+        "Jupiter"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "answers": [
+        "Seoul",
+        "Beijing",
+        "Tokyo"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "What is the chemical formula for water?",
+      "answers": [
+        "H2O",
+        "CO2",
+        "O2"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answers": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Jane Austen"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the sum of angles in a triangle?",
+      "answers": [
+        "180 degrees",
+        "360 degrees",
+        "90 degrees"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Which programming language is known as the 'mother of all languages'?",
+      "answers": [
+        "C",
+        "Java",
+        "Python"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the process by which plants make their own food?",
+      "answers": [
+        "Photosynthesis",
+        "Respiration",
+        "Digestion"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What is the integral of x^2 with respect to x?",
+      "answers": [
+        "x^3 + C",
+        "(1/3)x^3 + C",
+        "2x + C"
+      ],
+      "correctAnswerIndex": 1
+    }
+  ]
 }

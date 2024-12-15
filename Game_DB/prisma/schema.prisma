@@ -18,11 +18,21 @@ model Question {
   question          String   @unique
   answers           String[] @default([])
   correctAnswerIndex Int
+  subject           String   @default("General")
 }
 
 model UserStats {
-  id         Int    @id @default(autoincrement())
-  username   String @unique
-  victories  Int    @default(0)
-  totalGames Int    @default(0)
+  id                     Int      @id @default(autoincrement())
+  username               String   @unique
+  victories              Int      @default(0)
+  totalGames            Int      @default(0)
+  averageAnswerTime     Float    @default(0)
+  bestWinStreak         Int      @default(0)
+  correctAnswers        Int      @default(0)
+  fastestWinTime        Float    @default(0)
+  incorrectAnswers      Int      @default(0)
+  totalGamesPlayed      Int      @default(0)
+  totalPenalties        Int      @default(0)
+  totalQuestionsAnswered Int      @default(0)
+  winStreak             Int      @default(0)
 }

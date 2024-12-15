@@ -37,22 +37,63 @@ const syncJSONToDatabase = async () => {
 
             if (!existingQuestion) {
                 await prisma.question.create({
-                    data: { question, answers, correctAnswerIndex },
+                    data: { 
+                        question, 
+                        answers, 
+                        correctAnswerIndex,
+                        subject: "General"
+                    },
                 });
             }
         }
     }
 
     const userStats = await readJSON('user_stats.json');
-    if (typeof userStats.users === 'object' && userStats.users !== null) {
-        for (const [username, stats] of Object.entries(userStats.users as Record<string, { victories: number }>)) {
-            await prisma.userStats.upsert({
-                where: { username },
-                update: { victories: stats.victories, totalGames: userStats.total_games },
-                create: { username, victories: stats.victories, totalGames: userStats.total_games },
-            });
-        }
+  if (typeof userStats.users === 'object' && userStats.users !== null) {
+    for (const [username, stats] of Object.entries(userStats.users)) {
+      const typedStats = stats as {
+        average_answer_time: number;
+        best_win_streak: number;
+        correct_answers: number;
+        fastest_win_time: number;
+        incorrect_answers: number;
+        total_games_played: number;
+        total_penalties: number;
+        total_questions_answered: number;
+        victories: number;
+        win_streak: number;
+      };
+
+      await prisma.userStats.upsert({
+        where: { username },
+        update: {
+          averageAnswerTime: typedStats.average_answer_time,
+          bestWinStreak: typedStats.best_win_streak,
+          correctAnswers: typedStats.correct_answers,
+          fastestWinTime: typedStats.fastest_win_time,
+          incorrectAnswers: typedStats.incorrect_answers,
+          totalGamesPlayed: typedStats.total_games_played,
+          totalPenalties: typedStats.total_penalties,
+          totalQuestionsAnswered: typedStats.total_questions_answered,
+          victories: typedStats.victories,
+          winStreak: typedStats.win_streak,
+        },
+        create: {
+          username,
+          averageAnswerTime: typedStats.average_answer_time,
+          bestWinStreak: typedStats.best_win_streak,
+          correctAnswers: typedStats.correct_answers,
+          fastestWinTime: typedStats.fastest_win_time,
+          incorrectAnswers: typedStats.incorrect_answers,
+          totalGamesPlayed: typedStats.total_games_played,
+          totalPenalties: typedStats.total_penalties,
+          totalQuestionsAnswered: typedStats.total_questions_answered,
+          victories: typedStats.victories,
+          winStreak: typedStats.win_streak,
+        },
+      });
     }
+  }
 };
 
 syncJSONToDatabase()
