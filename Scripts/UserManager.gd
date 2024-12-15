@@ -21,10 +21,15 @@ func load_users() -> void:
 		if parse_result == OK:
 			var data = json.get_data()
 			valid_users = data["users"]
+		else:
+			print("JSON Parse Error: ", json.get_error_message(), " at line ", json.get_error_line())
+	else:
+		print("Could not open users file")
 
 func login(username: String, password: String) -> bool:
 	if username in valid_users and valid_users[username] == password:
 		if username in logged_in_users:
+			print("User " + username + " is already logged in!")
 			return false
 		
 		logged_in_users[username] = true
@@ -38,6 +43,7 @@ func logout(username: String) -> void:
 		logged_in_users.erase(username)
 		if current_logged_in_username == username:
 			current_logged_in_username = ""
+		print("User " + username + " logged out.")
 
 func is_user_logged_in(username: String) -> bool:
 	return username in logged_in_users

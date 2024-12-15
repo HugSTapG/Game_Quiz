@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5hyj2i02dg0y"]
+[gd_scene load_steps=3 format=3 uid="uid://5hyj2i02dg0y"]
 
 [ext_resource type="PackedScene" uid="uid://tv62o33j1a2r" path="res://Map.tscn" id="1_6cc2l"]
 [ext_resource type="Script" path="res://Scripts/QuizUI.gd" id="2_glku8"]
-[ext_resource type="PackedScene" uid="uid://sc1lbx3hth4r" path="res://Players.tscn" id="2_kv8by"]
 
-[node name="Control2" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,8 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Main" parent="." instance=ExtResource("1_6cc2l")]
-
-[node name="Players" parent="." instance=ExtResource("2_kv8by")]
 
 [node name="Quiz_UI" type="Panel" parent="."]
 layout_mode = 0

@@ -11,39 +11,36 @@ radius = 3.16228
 
 [node name="Players" type="Node2D"]
 
-[node name="Players" type="Node2D" parent="."]
-position = Vector2(503, 435)
-
-[node name="Player1" type="CharacterBody2D" parent="Players"]
+[node name="Player1" type="CharacterBody2D" parent="."]
 modulate = Color(0.756863, 1, 0.282353, 1)
 texture_filter = 1
-position = Vector2(30, 15)
+position = Vector2(533, 450)
 script = ExtResource("3_oyxk1")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Players/Player1"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1"]
 material = SubResource("CanvasItemMaterial_pcw0q")
 texture = ExtResource("2_crc4q")
 region_enabled = true
 region_rect = Rect2(114, 53, 11, 17)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_imlah")
 
-[node name="Player2" type="CharacterBody2D" parent="Players"]
+[node name="Player2" type="CharacterBody2D" parent="."]
 modulate = Color(1, 0.168627, 1, 1)
 texture_filter = 1
-position = Vector2(16, 22)
+position = Vector2(519, 457)
 script = ExtResource("1_acw2k")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Players/Player2"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
 material = SubResource("CanvasItemMaterial_pcw0q")
 texture = ExtResource("2_crc4q")
 region_enabled = true
 region_rect = Rect2(114, 53, 11, 17)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_imlah")

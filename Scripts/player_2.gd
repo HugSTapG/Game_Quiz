@@ -21,6 +21,8 @@ func _ready() -> void:
 	
 	pause_indices = [1, 3, 5, 7, 9, 12, 14, 16, 18, 21, 23, 25, 27, 30, 32, 35, 37, 40, 42, 44]
 	
+	GameManager.set_purple_player(self)
+	
 	super._ready()
 
 func prepare_next_move() -> void:
